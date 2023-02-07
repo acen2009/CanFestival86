@@ -15,8 +15,8 @@ void setup() {
   Serial.println("Hello CanFestival!");
 
   if(!node.begin(&MySlave_Data, BAUDRATE)){
-    Serial.println("Node Begin Failed!");
-    return;
+    Serial.println("Node Begin Failed, please reboot!");
+    while(1);
   }
   node.set86NodeId(NODEID);
   node.set86State(Initialisation);

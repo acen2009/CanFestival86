@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include "canfestival.h"
 
-void sdoDefaultCallback(CO_Data *d, uint8_t nodeId);
+void sdoWriteDefaultCallback(CO_Data *d, uint8_t nodeId);
 
 class CanFestival86 {
 
@@ -15,8 +15,10 @@ public:
 
     void setVerbose(bool is_verbose);
     void dumpRuntimeInfo(); // need to setVerbose to true
-
-    bool sdo(UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 size, void *data, SDOCallback_t Callback = &sdoDefaultCallback); 
+    bool sdoWrite(UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 size, void *data, UNS32 timeout_ms = 1000);    
+    bool sdoWriteAsync(UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 size, void *data, SDOCallback_t Callback = &sdoWriteDefaultCallback);     
+    bool sdoRead(UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 *size, void *data, UNS32 timeout_ms = 1000);
+    bool sdoReadAsync(UNS8 nodeId, UNS16 index, UNS8 subIndex, SDOCallback_t Callback);        
 private:
     CO_Data *_CO_Data = NULL;    
     bool _verbosity = false;    

@@ -16,7 +16,7 @@ void slaveBootupCallback(CO_Data*, UNS8){
   Serial.println("slave boot up!");  
   // set heartbeat period of slave node id 2 to produce heartbeat once per second.
   UNS16 data = 1000;
-  node.sdo(2, 0x1017, 0x00, 2, &data);
+  node.sdoWriteAsync(2, 0x1017, 0x00, 2, &data);
 }
 
 void setup() {
@@ -25,8 +25,8 @@ void setup() {
   Serial.println("Hello CanFestival!");
 
   if(!node.begin(&MyMaster_Data, BAUDRATE)){
-    Serial.println("Node Begin Failed!");
-    return;
+    Serial.println("Node Begin Failed, please reboot!");
+    while(1);
   }
   node.set86NodeId(NODEID);
   node.set86State(Initialisation);

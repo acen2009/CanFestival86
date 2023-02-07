@@ -8,8 +8,15 @@
 #include "mcm.h"
 #include "err.h"
 
-#define TIMER_MC 3//11 for 86duino duo and 3 for 86duino one
+#if defined (__86DUINO_EX) || defined (__DMP_EX_EVB)
+#define TIMER_MC 3
 #define TIMER_MD 2
+#elif defined (__86DUINO_EX2) || defined (__DMP_EX2_EVB)
+#define TIMER_MC 11
+#define TIMER_MD 2
+#else
+#error device not recognized, please define the system you're using
+#endif
 
 #define MICRO_TO_10NANO 100L
 

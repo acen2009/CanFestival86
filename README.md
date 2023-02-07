@@ -1,7 +1,7 @@
 # CanFestival86
 
 ## Overview
-CanFestival86 is a [CanFestival](https://canfestival.org/) porting aiming to run on [86Duino One](https://www.86duino.com/?p=70) board which is based on x86 architecture. The CanFestival version ported is CanFestival-3-de1fc3261f21.
+[CanFestival86](https://www.86duino.com/?p=21060&lang=TW) is a [CanFestival](https://canfestival.org/) porting aiming to run on [86Duino One](https://www.86duino.com/?p=70) board which is based on x86 architecture. The CanFestival version ported is CanFestival-3-de1fc3261f21.
 CanFestival is a popular CANopen stack and 86Duino One board comes with native CAN bus interface. With CanFestival86, it's literally easy to play with CANopen protocol and you can also build your own CANpoen device as well.
 
 [86Duino](https://www.86duino.com/) is an Arduino-like simple but extremely powerful embedded developing platform. With x86 based CPU, which has ability to run an OS like DOS/Linux/Windows, abundant I/O interface and plenty of popular libraries supported makes things easier and possible. Code editing, compiling and uploading to 86Duino board can be done through Arduino compatible 86Duino IDE.
@@ -59,7 +59,7 @@ Connections:
 Hook up the USB of both 86Duino One to PC for accessing serial monitor, and use the external power supply for 86Duino One if your PC's USB power is either not stable or not enough for working.
 
 ### Installing the CanFestival86 Library
-- download the library which comes in a zip file [here](https://github.com/acen2009).
+- download the library which comes in a zip file [here](https://github.com/acen2009/CanFestival86).
 - open up the 86Duino IDE, [download here](https://www.86duino.com/?page_id=8918).
 - go to sketch -> include library -> add .zip file library -> choose the zip file download just now.
 
